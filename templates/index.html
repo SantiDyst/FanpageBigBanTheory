@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigBangFans - Información</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Estilos adicionales minimalistas */
+        body {
+            background-color: #f8f9fa; /* Fondo gris muy claro */
+        }
+        .navbar {
+            background-color: #343a40 !important; /* Navbar oscuro */
+        }
+        .navbar .nav-link {
+            color: #f8f9fa !important; /* Texto claro en navbar */
+        }
+        .navbar .nav-link.active {
+            font-weight: bold;
+            color: #007bff !important; /* Resaltar el elemento activo */
+        }
+        .card {
+            border: none; /* Sin borde de tarjeta */
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05); /* Sombra suave */
+            transition: transform 0.2s ease-in-out; /* Animación al pasar el ratón */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
+        }
+        .card-img-top {
+            max-height: 200px; /* Altura máxima para las imágenes de card */
+            object-fit: cover; /* Recortar imagen para que se ajuste */
+        }
+        .footer {
+            background-color: #e9ecef; /* Fondo del footer */
+            padding: 20px 0;
+            text-align: center;
+            color: #6c757d;
+            margin-top: 50px;
+        }
+        /* Oculta las secciones por defecto, solo se muestran si están activas */
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">BigBangFans.com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'home' %}active{% endif %}" aria-current="page" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'personajes' %}active{% endif %}" href="/personajes">Personajes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'episodios' %}active{% endif %}" href="/episodios">Episodios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'actores' %}active{% endif %}" href="/actores">Actores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'ubicaciones' %}active{% endif %}" href="/ubicaciones">Ubicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_page == 'relaciones' %}active{% endif %}" href="/relaciones">Relaciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+        <section id="home-section" class="content-section {% if active_page == 'home' %}active{% endif %} text-center my-5">
+            <h1 class="display-4 text-primary">Bienvenido a BigBangFans.com</h1>
+            <p class="lead mb-4">Tu fuente de información sobre The Big Bang Theory.</p>
+            <p>Selecciona una opción en el menú de navegación para explorar los datos.</p>
+        </section>
+
+        <section id="personajes-section" class="content-section {% if active_page == 'personajes' %}active{% endif %} my-4">
+            <h2 class="text-center text-secondary mb-4">Personajes</h2>
+            {% if personajes %}
+            <div class="row row-cols-1 row-cols-md-3 g-4"> {# Grid de Bootstrap para cards #}
+                {% for p in personajes %}
+                <div class="col">
+                    <div class="card h-100"> {# h-100 para que todas las cards en una fila tengan la misma altura #}
+                        {% if p.imagen_url %}
+                            <img src="{{ p.imagen_url }}" class="card-img-top" alt="{{ p.nombre }}">
+                        {% else %}
+                            <img src="{{ url_for('static', filename='placeholder_personaje.png') }}" class="card-img-top" alt="Imagen no disponible">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ p.nombre }}</h5>
+                            <p class="card-text text-muted">{{ p.descripcion }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">ID: {{ p.id_personaje }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="alert alert-info">No hay personajes para mostrar.</p>
+            {% endif %}
+        </section>
+
+        <section id="episodios-section" class="content-section {% if active_page == 'episodios' %}active{% endif %} my-4">
+            <h2 class="text-center text-secondary mb-4">Episodios</h2>
+            {% if episodios %}
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for e in episodios %}
+                <div class="col">
+                    <div class="card h-100">
+                        {% if e.imagen_url %}
+                            <img src="{{ e.imagen_url }}" class="card-img-top" alt="{{ e.titulo }}">
+                        {% else %}
+                            <img src="{{ url_for('static', filename='placeholder_episodio.png') }}" class="card-img-top" alt="Imagen no disponible">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ e.titulo }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">T{{ e.numero_temporada }}E{{ e.numero_episodio }} - {{ e.fecha_emision if e.fecha_emision else 'N/A' }}</h6>
+                            <p class="card-text text-muted">{{ e.resumen }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">ID: {{ e.id_episodio }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="alert alert-info">No hay episodios para mostrar.</p>
+            {% endif %}
+        </section>
+
+        <section id="actores-section" class="content-section {% if active_page == 'actores' %}active{% endif %} my-4 p-3 border rounded shadow-sm bg-light">
+            <h2 class="text-center text-secondary mb-3">Actores</h2>
+            {% if actores %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Fecha Nacimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in actores %}
+                        <tr>
+                            <td>{{ a.id_actor }}</td>
+                            <td>{{ a.nombre }}</td>
+                            <td>{{ a.fecha_nacimiento if a.fecha_nacimiento else 'N/A' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="alert alert-info">No hay actores para mostrar.</p>
+            {% endif %}
+        </section>
+
+        <section id="ubicaciones-section" class="content-section {% if active_page == 'ubicaciones' %}active{% endif %} my-4 p-3 border rounded shadow-sm bg-light">
+            <h2 class="text-center text-secondary mb-3">Ubicaciones</h2>
+            {% if ubicaciones %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Dirección</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for u in ubicaciones %}
+                        <tr>
+                            <td>{{ u.id_ubicacion }}</td>
+                            <td>{{ u.nombre }}</td>
+                            <td>{{ u.tipo if u.tipo else 'N/A' }}</td>
+                            <td>{{ u.direccion if u.direccion else 'N/A' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="alert alert-info">No hay ubicaciones para mostrar.</p>
+            {% endif %}
+        </section>
+
+        <section id="relaciones-section" class="content-section {% if active_page == 'relaciones' %}active{% endif %} my-4 p-3 border rounded shadow-sm bg-light">
+            <h2 class="text-center text-secondary mb-3">Relaciones entre Personajes</h2>
+            {% if relaciones_personajes %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Personaje 1</th>
+                            <th>Tipo de Relación</th>
+                            <th>Personaje 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in relaciones_personajes %}
+                        <tr>
+                            <td>{{ r.personaje1_nombre }}</td>
+                            <td>{{ r.tipo_relacion }}</td>
+                            <td>{{ r.personaje2_nombre }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="alert alert-info">No hay relaciones de personajes para mostrar.</p>
+            {% endif %}
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 BigBangFans.com. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
