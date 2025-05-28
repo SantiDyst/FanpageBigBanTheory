@@ -9,7 +9,7 @@
     <style>
         /* Estilos adicionales minimalistas */
         body {
-            background-color: #f8f9fa; /* Fondo gris muy claro */
+            background-color: #f8f9fa4b; /* Fondo gris muy claro */
         }
         .navbar {
             background-color: #343a40 !important; /* Navbar oscuro */
@@ -98,7 +98,8 @@
                         {% if p.imagen_url %}
                             <img src="{{ p.imagen_url }}" class="card-img-top" alt="{{ p.nombre }}">
                         {% else %}
-                            <img src="{{ url_for('static', filename='placeholder_personaje.png') }}" class="card-img-top" alt="Imagen no disponible">
+                        <img src="{{ url_for('static', filename='images/' + p.imagen_url) }}" class="card-img-top" alt="{{ p.nombre }}">
+                            
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ p.nombre }}</h5>

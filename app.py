@@ -28,7 +28,7 @@ app = Flask(__name__)
 def get_data_from_db():
     # --- Datos de ejemplo para desarrollo (cuando conectes la DB, esto se eliminará) ---
     personajes = [
-        {'id_personaje': 1, 'nombre': 'Sheldon Cooper', 'descripcion': 'Físico teórico excéntrico con doctorados y un intelecto prodigioso.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Sheldon_Cooper.jpg'},
+        {'id_personaje': 1, 'nombre': 'Sheldon Cooper', 'descripcion': 'Físico teórico excéntrico con doctorados y un intelecto prodigioso.', 'imagen_url': 'static/images/sheldon_cooper.jpg'},
         {'id_personaje': 2, 'nombre': 'Leonard Hofstadter', 'descripcion': 'Físico experimental y el mejor amigo de Sheldon, a menudo es la voz de la razón.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leonard_Hofstadter.jpg'},
         {'id_personaje': 3, 'nombre': 'Penny', 'descripcion': 'Una aspirante a actriz y camarera, vecina y luego esposa de Leonard.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/2/22/Penny_%28Big_Bang_Theory%29.jpg'},
         {'id_personaje': 4, 'nombre': 'Howard Wolowitz', 'descripcion': 'Ingeniero aeroespacial y el único del grupo sin doctorado, pero con experiencia en el espacio.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Howard_Wolowitz.jpg'},
