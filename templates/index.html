@@ -9,17 +9,7 @@
     <style>
      <style>
     /* ... Tus estilos existentes ... */
-
-   body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(20, 30, 40, 0.5)), url('{{ url_for('static', filename='images/galaxy_background.jpg') }}');
-    /* ... el resto de propiedades del body ... */
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        color: #e0e0e0; /* Cambia el color del texto del body a algo más claro para el fondo oscuro */
-        /* --- FIN ESTILO 2 --- */
-    }
+  
 
     /* Ajustes para el texto y elementos del body */
     .text-primary { color: #cadad5b6 !important; /* Un azul más claro para contrastar */ }
@@ -58,6 +48,17 @@
     .table-striped > tbody > tr:nth-of-type(odd) > * {
         --bs-table-bg-type: rgba(0, 0, 0, 0.05) !important; /* Franjas de tabla con transparencia */
     }
+
+
+    body {
+      background-image: url('/static/images/galaxy_background.jpg'); /* Asegúrate que esté en la misma carpeta o coloca la ruta correcta */
+      background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      background-position: center center; /* Centra la imagen */
+    }
+
+
+
 
     /* ... Tus estilos existentes ... */
 </style>
