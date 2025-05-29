@@ -10,10 +10,9 @@
      <style>
     /* ... Tus estilos existentes ... */
 
-    body {
-        background-color: #330867; /* Fondo gris muy claro */
-        /* --- ESTILO 2: Gradiente Superpuesto --- */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(20, 30, 40, 0.8)), url('{{ url_for('static', filename='images/galaxy_background.jpg') }}'); /* Gradiente oscuro sobre la imagen */
+   body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(20, 30, 40, 0.5)), url('{{ url_for('static', filename='images/galaxy_background.jpg') }}');
+    /* ... el resto de propiedades del body ... */
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
@@ -23,12 +22,14 @@
     }
 
     /* Ajustes para el texto y elementos del body */
-    .text-primary { color: #23e2a2b6 !important; /* Un azul más claro para contrastar */ }
-    .text-secondary { color: #050635 !important; /* Un azul secundario más claro */ }
-    .text-muted { color: #050635 !important; } /* Texto muted más claro */
+    .text-primary { color: #cadad5b6 !important; /* Un azul más claro para contrastar */ }
+    .text-secondary { color: #c1c1d8 !important; /* Un azul secundario más claro */ }
+    .text-muted { color: #e8e8f0 !important; } /* Texto muted más claro */
+
+    
 
     .navbar {
-        background-color: rgba(52, 58, 64, 0.9) !important; /* Navbar semi-transparente */
+        background-color: rgba(17, 33, 110, 0.9) !important; /* Navbar azul bigbang.com */
     }
     .navbar .nav-link {
         color: #e0e0e0 !important; /* Color de enlaces de navegación más claro */
@@ -37,18 +38,16 @@
         color: #e0e0e0 !important; /* Color de enlace activo más claro */
     }
 
-    .container {
-        background-color: rgba(255, 255, 255, 0.1); /* Contenedor con un fondo muy sutilmente transparente */
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra más oscura */
-    }
+  .container {
+    background-color: transparent; /* Temporalmente para ver el fondo */
+    /* ... el resto de propiedades ... */
+}
 
     .card {
         background-color: rgba(255, 255, 255, 0.15); /* Cards ligeramente transparentes */
         color: #e0e0e08c; /* Texto de cards claro */
     }
-    .card-title { color: #0e044796 !important; }
+    .card-title { color: #f9f8fc96 !important; }
     .card-subtitle { color: #ADD8E6 !important; }
     .card-text { color: #cccccc !important; }
     .card-footer { background-color: rgba(0,0,0,0.1); border-top: 1px solid rgba(255,255,255,0.1); }

@@ -1,4 +1,6 @@
 
+
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -9,20 +11,20 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);;
-    color: #333;
+    color: #c4dbd897;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #171515;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 h1, h2 {
-    color: #0056b3;
+    color: #191a1b;
     text-align: center;
 }
 
