@@ -29,12 +29,12 @@ def get_data_from_db():
     # --- Datos de ejemplo para desarrollo (cuando conectes la DB, esto se eliminará) ---
     personajes = [
         {'id_personaje': 1, 'nombre': 'Sheldon Cooper', 'descripcion': 'Físico teórico excéntrico con doctorados y un intelecto prodigioso.', 'imagen_url': 'static/images/sheldon_cooper.jpg'},
-        {'id_personaje': 2, 'nombre': 'Leonard Hofstadter', 'descripcion': 'Físico experimental y el mejor amigo de Sheldon, a menudo es la voz de la razón.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leonard_Hofstadter.jpg'},
-        {'id_personaje': 3, 'nombre': 'Penny', 'descripcion': 'Una aspirante a actriz y camarera, vecina y luego esposa de Leonard.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/2/22/Penny_%28Big_Bang_Theory%29.jpg'},
-        {'id_personaje': 4, 'nombre': 'Howard Wolowitz', 'descripcion': 'Ingeniero aeroespacial y el único del grupo sin doctorado, pero con experiencia en el espacio.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Howard_Wolowitz.jpg'},
-        {'id_personaje': 5, 'nombre': 'Raj Koothrappali', 'descripcion': 'Astrofísico que inicialmente sufre de mutismo selectivo, incapaz de hablar con mujeres.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Raj_Koothrappali.jpg'},
-        {'id_personaje': 6, 'nombre': 'Bernadette Rostenkowski-Wolowitz', 'descripcion': 'Microbióloga con una voz peculiar, esposa de Howard.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Bernadette_Rostenkowski-Wolowitz.jpg/800px-Bernadette_Rostenkowski-Wolowitz.jpg'},
-        {'id_personaje': 7, 'nombre': 'Amy Farrah Fowler', 'descripcion': 'Neurobióloga, novia y luego esposa de Sheldon, con intereses científicos y sociales peculiares.', 'imagen_url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Amy_Farrah_Fowler.jpg/800px-Amy_Farrah_Fowler.jpg'}
+        {'id_personaje': 2, 'nombre': 'Leonard Hofstadter', 'descripcion': 'Físico experimental y el mejor amigo de Sheldon, a menudo es la voz de la razón.', 'imagen_url': 'static/images/leonard.jpg'},
+        {'id_personaje': 3, 'nombre': 'Penny', 'descripcion': 'Una aspirante a actriz y camarera, vecina y luego esposa de Leonard.', 'imagen_url': 'static/images/penny.jpg'},
+        {'id_personaje': 4, 'nombre': 'Howard Wolowitz', 'descripcion': 'Ingeniero aeroespacial y el único del grupo sin doctorado, pero con experiencia en el espacio.', 'imagen_url': 'static/images/howard.jpg'},
+        {'id_personaje': 5, 'nombre': 'Raj Koothrappali', 'descripcion': 'Astrofísico que inicialmente sufre de mutismo selectivo, incapaz de hablar con mujeres.', 'imagen_url':'static/images/raj.jpg'},
+        {'id_personaje': 6, 'nombre': 'Bernadette Rostenkowski-Wolowitz', 'descripcion': 'Microbióloga con una voz peculiar, esposa de Howard.','imagen_url': 'static/images/bernadette.jpg'},
+        {'id_personaje': 7, 'nombre': 'Amy Farrah Fowler', 'descripcion': 'Neurobióloga, novia y luego esposa de Sheldon, con intereses científicos y sociales peculiares.','imagen_url': 'static/images/amy.jpg'}
     ]
     episodios = [
         {'id_episodio': 1, 'titulo': 'Pilot', 'numero_temporada': 1, 'numero_episodio': 1, 'fecha_emision': '2007-09-24', 'resumen': 'Leonard y Sheldon conocen a su nueva vecina, Penny.', 'imagen_url': 'https://m.media-amazon.com/images/M/MV5BMjA3NTcwMTg4M15BMl5BanBnXkFtZTcwMjA3MzQ3MQ@@._V1_FMjpg_UX1000_.jpg'},
