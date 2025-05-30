@@ -6,30 +6,33 @@
     /* ... más estilos ... */
 }
 
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);;
-    color: #c4dbd897;
+   background-image: linear-gradient(to top, #cfdddd 0%, #fdfbff 100%);;
+    color: #f0f5f4dc;
+}
+
+h1, h2 {
+    color: #0cde2fb8;
+    text-align: center;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    background-color: #171515;
+    background-color: #e9e3e3;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(244, 242, 242, 0.471);
 }
 
-h1, h2 {
-    color: #191a1b;
-    text-align: center;
-}
+
 
 section {
     margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f5e4e4;
     padding-bottom: 20px;
 }
 

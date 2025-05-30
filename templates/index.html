@@ -12,14 +12,14 @@
   
 
     /* Ajustes para el texto y elementos del body */
-    .text-primary { color: #cadad5b6 !important; /* Un azul más claro para contrastar */ }
+    .text-primary { color: #2ab9bb2d !important; /* Un azul más claro para contrastar */ }
     .text-secondary { color: #c1c1d8 !important; /* Un azul secundario más claro */ }
     .text-muted { color: #e8e8f0 !important; } /* Texto muted más claro */
 
     
 
     .navbar {
-        background-color: rgba(17, 33, 110, 0.9) !important; /* Navbar azul bigbang.com */
+        background-color: rgba(7, 5, 52, 0.356) !important; /* Navbar azul bigbang.com */
     }
     .navbar .nav-link {
         color: #e0e0e0 !important; /* Color de enlaces de navegación más claro */
@@ -33,12 +33,15 @@
     /* ... el resto de propiedades ... */
 }
 
+
+
+/*ESTILOS CARDS*/
     .card {
-        background-color: rgba(255, 255, 255, 0.15); /* Cards ligeramente transparentes */
+        background-color: rgba(6, 4, 53, 0.672); /* Cards ligeramente transparentes */
         color: #e0e0e08c; /* Texto de cards claro */
     }
-    .card-title { color: #f9f8fc96 !important; }
-    .card-subtitle { color: #ADD8E6 !important; }
+    .card-title { color: #0fe29be7 !important; }
+    .card-subtitle { color: #eff3f4 !important; } 
     .card-text { color: #cccccc !important; }
     .card-footer { background-color: rgba(0,0,0,0.1); border-top: 1px solid rgba(255,255,255,0.1); }
     .table-dark {
@@ -67,7 +70,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">BigBangFans.com</a>
+            <a  class="navbar-brand" href="/">BigBangFans.com</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -95,12 +98,16 @@
             </div>
         </div>
     </nav>
+    
+    <!-- /*PAGINA INICIO-HOME */ -->
 
     <div class="container mt-4 mb-5">
         <section id="home-section" class="content-section {% if active_page == 'home' %}active{% endif %} text-center my-5">
-            <h1 class="display-4 text-primary">Bienvenido a BigBangFans.com</h1>
+            <h1 style="color:rgba(19, 224, 163, 0.685)" >Bienvenido a BigBangFans.com</h1>
             <p class="lead mb-4">Tu fuente de información sobre The Big Bang Theory.</p>
             <p>Selecciona una opción en el menú de navegación para explorar los datos.</p>
+        
+        
         </section>
 
         <section id="personajes-section" class="content-section {% if active_page == 'personajes' %}active{% endif %} my-4">
@@ -121,7 +128,7 @@
                             <p class="card-text text-muted">{{ p.descripcion }}</p>
                         </div>
                         <!-- <div class="card-footer">
-                            <small class="text-body-secondary">ID: {{ p.id_personaje }}</small>
+                            <small class="text-body-secondary">ID: {{ p.id_personaje }}</small> Se ocultan los id 
                         </div> -->
                     </div>
                 </div>
@@ -246,7 +253,7 @@
             <p class="alert alert-info">No hay relaciones de personajes para mostrar.</p>
             {% endif %}
         </section>
-
+ 
     </div>
 
     <footer class="footer">
